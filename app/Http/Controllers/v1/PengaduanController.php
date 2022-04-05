@@ -8,7 +8,7 @@ use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
-class PengajuanController extends Controller
+class PengaduanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,7 +40,7 @@ class PengajuanController extends Controller
     {
         // return $request;
         $request->validate([
-            'nik' => 'required|unique:pengaduan,nik',
+            'nik' => 'required',
             'nama' => 'required',
             'no_hp' => 'required|max:13',
             'perihal' => 'required',
@@ -51,6 +51,7 @@ class PengajuanController extends Controller
             $tambahPengaduan->nama = $request->nama;
             $tambahPengaduan->no_hp = $request->no_hp;
             $tambahPengaduan->perihal = $request->perihal;
+            
             $tambahPengaduan->save();
 
             return redirect()->back()->withStatus('Berhasil menambahkan data.');

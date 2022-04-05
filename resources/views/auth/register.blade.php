@@ -15,42 +15,52 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+            <!-- NIK -->
+            <div class="mt-4">
+                <x-label for="nik" :value="__('NIK')" />
 
-                <x-input id="name" class="" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="nik" class="" type="text" name="nik" :value="old('nik')" required />
             </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+            <!-- Nama -->
+            <div class="mt-3">
+                <x-label for="nama" :value="__('Nama')" />
 
-                <x-input id="email" class="" type="email" name="email" :value="old('email')" required />
+                <x-input id="nama" class="" type="text" name="nama" :value="old('nama')" required autofocus />
             </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+            <!-- Alamat -->
+            <div class="mt-3">
+                <x-label for="alamat" :value="__('Alamat')" />
 
-                <x-input id="password" class=""
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+                <x-input id="alamat" class="" type="text" name="alamat" :value="old('alamat')" required autofocus />
             </div>
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+            <!-- Jenis kelamin -->
+            <div class="mt-3">
+                <x-label for="nama" :value="__('Jenis kelamin')" />
+                <br>
+                <input type="radio" name="jenis_kelamin" id="laki" value="Laki-laki" required>&nbsp;<label for="laki">Laki-laki</label>
+                <input type="radio" name="jenis_kelamin" id="perempuan" value="Perempuan" required>&nbsp;<label for="perempuan">Perempuan</label>
+            </div>
 
-                <x-input id="password_confirmation" class=""
-                                type="password"
-                                name="password_confirmation" required />
+            <!-- Tanggal lahir -->
+            <div class="mt-3">
+                <x-label for="tgl_lahir" :value="__('Tanggal lahir')" />
+
+                <x-input id="tgl_lahir" class="" type="date" name="tgl_lahir" :value="old('tgl_lahir')" required autofocus />
+            </div>
+
+            <!-- No HP -->
+            <div class="mt-3">
+                <x-label for="no_hp" :value="__('No. HP')" />
+
+                <x-input id="no_hp" class="" type="text" name="no_hp" :value="old('no_hp')" required autofocus />
             </div>
 
             <div class="d-flex justify-content-end mt-4">
                 <a class="text-muted" href="{{ route('login') }}" style="margin-right: 15px; margin-top: 15px;">
-                    {{ __('Already registered?') }}
+                    {{ __('Sudah mendaftar?') }}
                 </a>
 
                 <x-button class="ml-4">

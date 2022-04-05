@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\v1\BerandaController;
 use App\Http\Controllers\v1\BeritaController;
-use App\Http\Controllers\v1\PengajuanController;
+use App\Http\Controllers\v1\PengaduanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[BerandaController::class, 'index'])->name('beranda');
-Route::get('/berita',[BeritaController::class, 'index']);
-Route::get('/berita/detail/{slug}',[BeritaController::class, 'detail']);
-Route::resource('pengajuan', PengajuanController::class);
+Route::get('/berita',[BeritaController::class, 'index'])->name('berita.index');
+Route::get('/berita/detail/{slug}',[BeritaController::class, 'detail'])->name('berita.detail');
+Route::resource('pengajuan', PengaduanController::class);
+Route::get('/riwayat',[BerandaController::class, 'riwayat'])->name('riwayat.index');
 
 // Route::middleware(['auth'])->group(function () {
 // });

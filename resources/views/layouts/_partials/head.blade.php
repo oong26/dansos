@@ -5,7 +5,7 @@
 
 
     <!-- Title -->
-    <title>Be-one</title>
+    <title>{{ Request::segment(1) != '' ? ucfirst(Request::segment(1)).' - '.config('app.name', 'Dansos') : 'Beranda '.config('app.name', 'Dansos') }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('') }}assets/img/favicon.ico">

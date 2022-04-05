@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\MasyarakatModel;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Events\LoginHistory;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,11 +30,22 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        $request->authenticate();
+        // $request->authenticate();
+        $user = MasyarakatModel::where('nik', $request->nik)->first();
 
-        $request->session()->regenerate();
+        if($user != null) {
+            event(new Auth($user));
+    
+            $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+            \Session::put('nik', $user->nik);
+            \Session::put('nama', $user->nama);
+    
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
+        else {
+            return back()->withError('NIK tidak ditemukan');
+        }
     }
 
     /**
