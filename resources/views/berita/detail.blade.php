@@ -14,7 +14,7 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="border: none;">
-              <img class="card-img-top img-fluid" style="height: 400px;" src="{{ 'http://127.0.0.1:8000/upload/artikel/'.$data->cover }}" alt="Card image cap">
+              <img class="card-img-top img-fluid" style="height: 400px;" src="{{ 'http://127.0.0.1:8000/public/upload/artikel/'.$data->cover }}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{ ucwords($data->title) }}</h5>
                   <p class="card-text">{{ $data->konten }}</p>
@@ -26,7 +26,7 @@
               <div class="row">
                 <div class="col">
                   <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="border: none;">
-                    <img class="card-img-top img-fluid" style="height: 300px;" src="{{ 'http://127.0.0.1:8000/upload/artikel/'.$item->cover }}" alt="Card image cap">
+                    <img class="card-img-top img-fluid" style="height: 300px;" src="{{ 'http://127.0.0.1:8000/public/upload/artikel/'.$item->cover }}" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{ ucwords($item->title) }}</h5>
                       <p class="card-text">{{ substr($item->konten, 0, 40) }}</p>

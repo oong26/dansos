@@ -11,7 +11,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block carousel-image" src="{{ asset('') }}assets/img/slide_02.jpg" alt="First slide">
+        <img class="d-block carousel-image" src="{{ asset('') }}public/assets/img/slide_02.jpg" alt="First slide">
         <div class="carousel-caption d-none d-md-block slider-inner">
                 <h1>Free MULTIPURPSE TEMPLATE</h1>
                 <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis n</h5>                                <a class="btn get-started-btn" href="#">Get Started</a>
@@ -46,7 +46,7 @@
           @foreach ($artikel as $item)
           <div class="col-lg-6">
               <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="border: none;">
-                  <img class="card-img-top img-fluid" style="height: 400px;" src="{{ 'http://127.0.0.1:8000/upload/artikel/'.$item->cover }}" alt="Card image cap">
+                  <img class="card-img-top img-fluid" style="height: 400px;" src="{{ 'http://127.0.0.1:8000/public/upload/artikel/'.$item->cover }}" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">{{ ucwords($item->title) }}</h5>
                     <p class="card-text">{{ substr($item->konten, 0, 40) }}</p>
