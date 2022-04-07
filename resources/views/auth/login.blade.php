@@ -20,27 +20,9 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('NIK')" />
+                <x-label for="nik" :value="__('NIK')" />
 
-                <x-input id="email" class="" type="email"  name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class=""
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="mt-3 form-check">
-                <input id="remember_me" type="checkbox" class="form-check-input" name="remember">
-                <label for="remember_me" class="form-check-label text-sm">
-                    {{ __('Remember me') }}
-                </label>
+                <x-input id="nik" class="" type="nik"  name="nik" :value="old('nik')" required autofocus />
             </div>
 
             <div class="d-flex justify-content-end mt-4">

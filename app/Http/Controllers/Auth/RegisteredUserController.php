@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\MasyarakatModel;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -33,22 +34,28 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        $this->validate($request, [
+            'nama' => 'required|max:50',
+            'nik' => 'required|unique:masyarakat,nik|max:16',
+            'alamat' => 'required|max:255',
+            'jenis_kelamin' => 'required',
+            'tgl_lahir' => 'required|max:10',
+            'no_hp' => 'required|unique:masyarakat,no_hp|max:15',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+        $user = MasyarakatModel::insert([
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal_lahir' => $request->tgl_lahir,
+            'no_hp' => $request->no_hp,
         ]);
 
         event(new Registered($user));
+        // Auth::login($user);
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        // return redirect(RouteServiceProvider::HOME);
+        return redirect('/login');
     }
 }
