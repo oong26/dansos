@@ -32,27 +32,27 @@
     @include('layouts._partials.footer')
     <!-- JS -->
    <!-- Popper.js -->
-   <script src="{{ asset('') }}assets/js/popper.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/popper.min.js"></script>
    <!-- Bootstrap.js -->
-   <script src="{{ asset('') }}assets/js/bootstrap-4.3.1.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/bootstrap-4.3.1.min.js"></script>
    <!-- Modernizr.js -->
-   <script src="{{ asset('') }}assets/js/vendor/modernizr-3.5.0.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/modernizr-3.5.0.min.js"></script>
    <!-- Owl.Carousel.js -->
-   <script src="{{ asset('') }}assets/js/vendor/owl.carousel-2.3.4.min.js"></script>
-   <script src="{{ asset('') }}assets/js/vendor/owl.carousel2.thumbs.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/owl.carousel-2.3.4.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/owl.carousel2.thumbs.min.js"></script>
    <!-- Waypoints.js -->
-   <script src="{{ asset('') }}assets/js/vendor/waypoints-4.0.1.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/waypoints-4.0.1.min.js"></script>
    <!-- ColorNip.js -->
-   <script src="{{ asset('') }}assets/js/vendor/colornip.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/colornip.min.js"></script>
    <!-- SlickNav.js -->
-   <script src="{{ asset('') }}assets/js/vendor/slicknav.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/slicknav.min.js"></script>
    <!-- ScrollUp.js -->
-   <script src="{{ asset('') }}assets/js/vendor/jquery.scrollUp.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/jquery.scrollUp.min.js"></script>
    <!-- MagnificPopup.js -->
-   <script src="{{ asset('') }}assets/js/vendor/magnific-popup.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/vendor/magnific-popup.min.js"></script>
 
    <!-- Main.js -->
-   <script src="{{ asset('') }}assets/js/main.js"></script>
+   <script src="{{ asset('') }}public/assets/js/main.js"></script>
    @stack('custom-js')
 </body>
 </html>

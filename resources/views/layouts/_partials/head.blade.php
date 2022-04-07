@@ -12,28 +12,28 @@
 
 <!-- CSS Here -->
    <!-- MagnificPopup.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/magnific-popup.css">
    <!-- SlickNav.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/slicknav.min.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/slicknav.min.css">
    <!-- Owl.carousel.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/owl.carousel-2.3.4.min.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/owl.carousel-2.3.4.min.css">
    <!-- Fontawesome.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/fontawesome-free-5.12.0.min.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/fontawesome-free-5.12.0.min.css">
    <!-- Bootstrap.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/bootstrap-4.3.1.min.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/bootstrap-4.3.1.min.css">
    <!-- Default.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/default.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/default.css">
    <!-- Style.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/style.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/style.css">
    <!-- Responsive.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/responsive.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/responsive.css">
 
    <!-- ColorNip.css -->
-   <link rel="stylesheet" href="{{ asset('') }}assets/css/colornip.min.css">
-   <link id="theme" rel="stylesheet" href="{{ asset('') }}assets/css/theme-colors/theme-default.css">
+   <link rel="stylesheet" href="{{ asset('') }}public/assets/css/colornip.min.css">
+   <link id="theme" rel="stylesheet" href="{{ asset('') }}public/assets/css/theme-colors/theme-default.css">
 
 
    <!-- Jquery -->
-   <script src="{{ asset('') }}assets/js/jquery-3.4.1.min.js"></script>
+   <script src="{{ asset('') }}public/assets/js/jquery-3.4.1.min.js"></script>
 
    @stack('custom-css')
