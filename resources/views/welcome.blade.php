@@ -46,7 +46,7 @@
           @foreach ($artikel as $item)
           <div class="col-lg-6">
               <div class="card shadow-sm p-3 mb-5 bg-white rounded" style="border: none;">
-                  <img class="card-img-top img-fluid" style="height: 400px;" src="{{ 'http://127.0.0.1:8000/public/upload/artikel/'.$item->cover }}" alt="Card image cap">
+                  <img class="card-img-top img-fluid" style="height: 400px;" src="{{ 'https://administrator.dansos-sudinsos.com/upload/artikel/'.$item->cover }}" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">{{ ucwords($item->title) }}</h5>
                     <p class="card-text">{{ substr($item->konten, 0, 40) }}</p>
