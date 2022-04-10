@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Alert;
 
 class RegisteredUserController extends Controller
 {
@@ -36,6 +37,8 @@ class RegisteredUserController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required|max:50',
+            'password' => 'min:6|required_with:konfirmasi_password|same:konfirmasi_password',
+            'konfirmasi_password' => 'min:6',
             'nik' => 'required|unique:masyarakat,nik|max:16',
             'alamat' => 'required|max:255',
             'jenis_kelamin' => 'required',
@@ -46,16 +49,19 @@ class RegisteredUserController extends Controller
         $user = MasyarakatModel::insert([
             'nik' => $request->nik,
             'nama' => $request->nama,
+            'password' => Hash::make($request->password),
             'alamat' => $request->alamat,
             'jenis_kelamin' => $request->jenis_kelamin,
             'tanggal_lahir' => $request->tgl_lahir,
             'no_hp' => $request->no_hp,
+            'status' => 'masyarakat',
         ]);
 
         event(new Registered($user));
         // Auth::login($user);
 
         // return redirect(RouteServiceProvider::HOME);
-        return redirect('/login');
+        Alert::success('Berhasil mendaftar', 'Silahkan menunggu validasi 2x24 jam.');
+        return redirect('/');
     }
 }

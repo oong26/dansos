@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\v1\BerandaController;
 use App\Http\Controllers\v1\BeritaController;
 use App\Http\Controllers\v1\PengaduanController;
@@ -21,7 +22,7 @@ Route::get('/berita',[BeritaController::class, 'index'])->name('berita.index');
 Route::get('/berita/detail/{slug}',[BeritaController::class, 'detail'])->name('berita.detail');
 Route::resource('pengajuan', PengaduanController::class);
 Route::get('/riwayat',[BerandaController::class, 'riwayat'])->name('riwayat.index');
-
+Route::resource('profil', ProfilController::class);
 // Route::middleware(['auth'])->group(function () {
 // });
 // Route::get('/dashboard', function () {

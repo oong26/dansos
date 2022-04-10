@@ -28,14 +28,9 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item p-2" href="{{ route('riwayat.index') }}"> Riwayat</a>
+                                    <a class="dropdown-item p-2" href="{{ route('profil.index') }}"> Profil</a>
                                     <div class="dropdown-divider"></div>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                        
-                                        <button type="submit" class="dropdown-item p-2">
-                                            {{ __('Log Out') }}
-                                        </button>
-                                    </form>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutUser"><i data-feather="log-out"></i>Keluar</a>
                                     </div>
                                 </li>
                             @else

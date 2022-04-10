@@ -28,8 +28,10 @@
     <!-- End Slider Area -->
     <!-- Start Why Choose Us Area -->
     @yield('content')
+    @include('sweetalert::alert')
     <!-- End Why Choose Us Area -->
     @include('layouts._partials.footer')
+    @include('layouts._partials.modal')
     <!-- JS -->
    <!-- Popper.js -->
    <script src="{{ asset('') }}assets/js/popper.min.js"></script>
@@ -52,7 +54,9 @@
    <script src="{{ asset('') }}assets/js/vendor/magnific-popup.min.js"></script>
 
    <!-- Main.js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.min.js" integrity="sha512-7x7HoEikRZhV0FAORWP+hrUzl75JW/uLHBbg2kHnPdFmScpIeHY0ieUVSacjusrKrlA/RsA2tDOBvisFmKc3xw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="{{ asset('') }}assets/js/main.js"></script>
+
    @stack('custom-js')
 </body>
 </html>

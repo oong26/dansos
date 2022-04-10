@@ -32,6 +32,7 @@
 @section('content')
 <div class="choose-us-area pt-70 pb-70" id="page">
     <div class="container">
+
         <div class="row">
             <div class="col-lg-12 text-center mb-70">
                 <div class="section-title">

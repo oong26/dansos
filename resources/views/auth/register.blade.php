@@ -28,6 +28,17 @@
 
                 <x-input id="nama" class="" type="text" name="nama" :value="old('nama')" required autofocus />
             </div>
+             <!-- password -->
+            <div class="mt-3">
+                <x-label for="password" :value="__('Password')" />
+
+                <x-input id="password" class="" type="password" name="password" :value="old('password')" required autofocus />
+            </div>
+            <div class="mt-3">
+                <x-label for="konfirmasi_password" :value="__('Konfirmasi Password')" />
+
+                <x-input id="konfirmasi_password" class="" type="password" name="konfirmasi_password" :value="old('konfirmasi_password')" required autofocus />
+            </div>
 
             <!-- Alamat -->
             <div class="mt-3">

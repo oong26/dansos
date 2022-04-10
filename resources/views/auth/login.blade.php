@@ -18,11 +18,17 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <!-- Email Address -->
+            <!-- NIK -->
             <div>
                 <x-label for="nik" :value="__('NIK')" />
 
                 <x-input id="nik" class="" type="nik"  name="nik" :value="old('nik')" required autofocus />
+            </div>
+            {{-- password --}}
+            <div class="mt-3">
+                <x-label for="password" :value="__('Password')" />
+
+                <x-input id="password" class="" type="password"  name="password" :value="old('password')" required autofocus />
             </div>
 
             <div class="d-flex justify-content-end mt-4">

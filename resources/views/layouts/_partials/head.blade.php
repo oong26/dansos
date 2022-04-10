@@ -35,5 +35,5 @@
 
    <!-- Jquery -->
    <script src="{{ asset('') }}assets/js/jquery-3.4.1.min.js"></script>
-
+   {{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
    @stack('custom-css')

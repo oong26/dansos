@@ -9,6 +9,9 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Events\LoginHistory;
+use Illuminate\Support\Facades\Session;
+use Alert;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -33,18 +36,28 @@ class AuthenticatedSessionController extends Controller
         // $request->authenticate();
         $user = MasyarakatModel::where('nik', $request->nik)->first();
 
-        if($user != null) {
-            event(new Auth($user));
-    
-            $request->session()->regenerate();
+        if($user != null ) {
+            if (Hash::check($request->password,$user->password)) {
+               if ($user->status === 'masyarakat') {
+                    $user = MasyarakatModel::where('nik', $request->nik)->first();
+                    event(new Auth($user));
 
-            \Session::put('nik', $user->nik);
-            \Session::put('nama', $user->nama);
-    
-            return redirect()->intended(RouteServiceProvider::HOME);
+                    $request->session()->regenerate();
+                    // $token = $user->createToken('token')->plainTextToken;
+                    // Session::put('token', $token);
+                    Session::put('nik', $user->nik);
+                    Session::put('nama', $user->nama);
+                    Alert::success('Selamat Datang', 'Berhasil masuk.');
+                    return redirect()->intended(RouteServiceProvider::HOME);
+               }else{
+                   return back()->withErrors('Belum diverifikasi.');
+               }
+            }else{
+                return back()->withErrors('Password terjadi kesalahan.');
+            }
         }
         else {
-            return back()->withError('NIK tidak ditemukan');
+            return back()->withErrors('NIK tidak ditemukan');
         }
     }
 
@@ -56,12 +69,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
-        Auth::guard('web')->logout();
+        session()->forget('nama');
+        if (Session::get('nama') != null) {
+            return redirect('/');
+        }else{
+            return redirect('/')->withStatus('Berhasil masuk.');
+        }
+        // Auth::guard('web')->logout();
 
-        $request->session()->invalidate();
+        // $request->session()->invalidate();
 
-        $request->session()->regenerateToken();
+        // $request->session()->regenerateToken();
 
-        return redirect('/');
     }
 }
