@@ -28,7 +28,7 @@
 
                 <x-input id="nama" class="" type="text" name="nama" :value="old('nama')" required autofocus />
             </div>
-             <!-- password -->
+            <!-- password -->
             <div class="mt-3">
                 <x-label for="password" :value="__('Password')" />
 

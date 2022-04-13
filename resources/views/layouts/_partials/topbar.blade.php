@@ -24,7 +24,7 @@
                             @if(Session::get('nama') != null)
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-user"></i> Rifjan Jundila
+                                        <i class="fas fa-user"></i> {{ Session::get('nama') }}
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item p-2" href="{{ route('riwayat.index') }}"> Riwayat</a>

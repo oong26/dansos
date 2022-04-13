@@ -41,7 +41,6 @@ class AuthenticatedSessionController extends Controller
                if ($user->status === 'masyarakat') {
                     $user = MasyarakatModel::where('nik', $request->nik)->first();
                     event(new Auth($user));
-
                     $request->session()->regenerate();
                     // $token = $user->createToken('token')->plainTextToken;
                     // Session::put('token', $token);

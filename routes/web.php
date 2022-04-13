@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\v1\BerandaController;
 use App\Http\Controllers\v1\BeritaController;
@@ -16,13 +17,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('/form-forgot-password/check-forgot-password-update', [PasswordResetLinkController::class, 'updateUser'])->name('update.user');
+Route::get('/form-forgot-password', [PasswordResetLinkController::class, 'getupdateUser'])->name('getupdate.user');
+// Route::get('/check-forgot-password/forgot-password', [PasswordResetLinkController::class, 'updateUser'])->name('update.user');
+// Route::get('/check-forgot-password',[PasswordResetLinkController::class,'check'])->name('check.nik');
+Route::post('/check-forgot-password',[PasswordResetLinkController::class,'check'])->name('check.nik');
 Route::get('/',[BerandaController::class, 'index'])->name('beranda');
 Route::get('/berita',[BeritaController::class, 'index'])->name('berita.index');
 Route::get('/berita/detail/{slug}',[BeritaController::class, 'detail'])->name('berita.detail');
 Route::resource('pengajuan', PengaduanController::class);
 Route::get('/riwayat',[BerandaController::class, 'riwayat'])->name('riwayat.index');
 Route::resource('profil', ProfilController::class);
+
 // Route::middleware(['auth'])->group(function () {
 // });
 // Route::get('/dashboard', function () {
